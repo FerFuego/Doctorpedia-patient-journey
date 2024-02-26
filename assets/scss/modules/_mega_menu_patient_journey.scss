@@ -1,0 +1,758 @@
+.b-single-patient-journey {
+    background-color: map-get($greys, 'light-1');
+
+    &__mega-menu {
+        background-color: $white;
+        border: 1px solid map-get($greys, 'light-4');
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
+        padding: 29px 0 0;
+        margin: 0 auto 42px;
+        width: 100%;
+
+        @include respond-below(sl) {
+            display: none;
+        }
+
+        &--mobile {
+            display: none;
+
+            @include respond-below(sl) {
+                display: block;
+            }
+        }
+
+        &.collapsed {
+            padding-top: 46px !important;
+
+            // tablet
+            @include respond-below(l) {
+                .js-mega-menu {
+                    height: 0;
+                    overflow: hidden;
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+        }
+
+        // tablet
+        @include respond-below(l) {
+            padding: 56px 0 14px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+    }
+
+    &__mega-menu-container {
+        display: flex;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1210px; // this is because shadow of play timeline is outside of the container
+        height: 100%;
+        overflow-x: auto;
+        overflow-y: visible;
+        padding-left: 10px; // this is because shadow of play timeline is outside of the container
+        padding-right: 5px; // this is because shadow of play timeline is outside of the container
+        padding-bottom: 26px;
+        scroll-behavior: smooth;
+
+        &.active {
+            padding-bottom: 0;
+            overflow: hidden;
+            overflow-x: auto;
+
+            // tablet
+            @include respond-below(l) {
+                height: 0;
+            }
+        }
+
+        &:hover {
+            /* Chrome */
+            &::-webkit-scrollbar {
+                height: 4px;
+            }
+
+            /* Firefox */
+            scrollbar-width: 4px;
+            scrollbar-width: thin;
+        }
+
+        /* Firefox */
+        scrollbar-width: 0px;
+        scrollbar-width: none;
+
+        /* Chrome */
+        &::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: $secondary-hover;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: #DDDDDD;
+            border-radius: 20px;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: map-get($greys, 'regular');
+        }
+
+        // laptop
+        @include respond-below(xl) {
+            padding: 0 15px 26px;
+            margin: 0 !important;
+            margin-bottom: 0;
+            max-width: 1024px;
+            height: 100%;
+        }
+
+        // tablet
+        @include respond-below(l) {
+            flex-direction: column;
+            overflow-x: visible;
+            padding-bottom: 0;
+        }
+    }
+
+    &__mega-menu-container-cta {
+        display: flex;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1210px; // this is because shadow of play timeline is outside of the container
+        height: 100%;
+        position: relative;
+
+    }
+
+    &__mega-menu-item {
+        flex: 1;
+        position: relative;
+        width: auto;
+        min-width: 290px;
+        padding-top: 8px;
+
+        // tablet
+        @include respond-below(l) {
+            flex-direction: row;
+            flex: 1;
+            display: flex;
+            padding-top: 0;
+        }
+    }
+
+    &__mega-menu-mobile {
+        height: auto;
+
+        // tablet
+        @include respond-below(l) {
+            height: auto;
+            width: 100%;
+        }
+    }
+
+    &__mega-menu-step-mobile {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+    }
+
+    &__mega-menu-title {
+        display: flex;
+        align-items: baseline;
+        color: map-get($greys, 'regular-2');
+        font-family: $font;
+        font-weight: map-get($font-weights, 'medium');
+        font-size: 18px;
+        line-height: 1.5em;
+        margin-bottom: 10px;
+        max-width: 228px;
+
+        &:after {
+            content: '';
+            background-image: url(../img/icons/next-arrow-grey.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            display: block;
+            color: map-get($greys, 'regular-2');
+            margin-left: 8px;
+            margin-top: 2px;
+            height: 10.8px;
+            width: 10px;
+            transition: all .3s ease-in-out;
+
+            // tablet
+            @include respond-below(l) {
+                transform: rotate(90deg);
+                margin-left: 0;
+                background-size: initial; // this is needed for Safari
+                background-repeat: no-repeat; // this is needed for Safari
+                height: 14px;
+                width: 14px;
+                display: block;
+                padding: 0;
+                margin: 0 8px 0 0;
+            }
+        }
+
+        &:hover {
+            color: map-get($greys, 'dark');
+            cursor: pointer;
+        }
+
+        &.active {
+            color: map-get($greys, 'dark');
+            cursor: pointer;
+
+            &:after {
+                background-image: url(../img/icons/next-arrow-black.svg);
+                color: map-get($greys, 'dark');
+
+                // tablet
+                @include respond-below(l) {
+                    transform: rotate(270deg);
+                }
+            }
+        }
+
+        // tablet
+        @include respond-below(l) {
+            justify-content: space-between;
+            max-width: 100%;
+        }
+    }
+
+    &__mega-menu-title-without-after::after {
+        display: none;
+    }
+
+    &__mega-menu-content {
+        border-left: 1px solid map-get($greys, 'light-4');
+        padding-left: 10px;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease-in-out;
+
+        &.active {
+            height: auto;
+        }
+
+        // tablet
+        @include respond-below(l) {
+            border-left: 0;
+            margin-bottom: 24px;
+            padding-left: 0;
+            height: 0;
+            overflow: hidden;
+        }
+    }
+
+    &__mega-menu-content-item {
+        font-family: $font;
+        font-weight: map-get($font-weights, 'regular');
+        font-size: 16px;
+        line-height: 1.5em;
+        color: map-get($greys, 'regular-2');
+        cursor: pointer;
+        margin-bottom: 10px;
+        text-decoration: none;
+        overflow: hidden;
+        white-space: nowrap;
+        max-width: 250px;
+        text-overflow: ellipsis;
+        transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        /* Firefox 4 */
+        -webkit-transition: all 0.3s ease;
+        /* Safari and Chrome */
+        -o-transition: all 0.3s ease;
+        /* Opera */
+        -ms-transition: all 0.3s ease;
+        /* Explorer 10 */
+        position: relative;
+        z-index: 2;
+
+        &:hover {
+            display: block;
+            color: $secondary;
+            overflow: visible;
+            text-overflow: initial;
+            word-break: break-word;
+            white-space: normal;
+        }
+
+        &.active {
+            color: $secondary;
+
+            // tablet
+            @include respond-below(l) {
+                background-color: $secondary-hover;
+                padding: 8px;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &.hidden {
+            display: none;
+        }
+
+        // tablet
+        @include respond-below(l) {
+            border-radius: 4px;
+            padding: 8px 8px 8px 0;
+            font-size: 18px;
+            max-width: 515px;
+        }
+
+        // mobile
+        @include respond-below(md) {
+            max-width: 300px;
+        }
+
+        // mini mobile
+        @include respond-below(sm) {
+            max-width: 280px;
+        }
+
+        // iphone 5
+        @media (max-width: 320px) {
+            max-width: 220px;
+        }
+    }
+
+    &__mega-menu-timeline {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 16px;
+        height: 24px;
+        width: 100%;
+
+        // tablet
+        @include respond-below(l) {
+            height: auto;
+            flex-direction: column;
+            margin-bottom: 0;
+            margin-right: 16px;
+            width: 32px;
+        }
+    }
+
+    &__mega-menu-timeline-icon {
+        background: url(../img/icons/timeline-empty.svg) no-repeat center;
+        cursor: pointer;
+        display: block;
+        width: 17px;
+        height: 16px;
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 2;
+
+        &.active {
+            background: url(../img/icons/timeline-play.svg) no-repeat center;
+            background-size: contain;
+            box-shadow: 0px 0px 10px rgba(165, 166, 246, 0.5);
+            border-radius: 50%;
+            display: block;
+            width: 24px;
+            height: 22px;
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: -9px;
+                left: -9px;
+                height: 38px;
+                width: 38px;
+                border-radius: 50%;
+                border: 1px solid #E6E1FF;
+                z-index: 1;
+                // tablet
+                @include respond-below(l) {
+                    display: none;
+                }
+            }
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: -4px;
+                left: -4px;
+                height: 28px;
+                width: 28px;
+                border-radius: 50%;
+                border: 1px solid #AA9DF3;
+                z-index: 1;
+                // tablet
+                @include respond-below(l) {
+                    display: none;
+                }
+            }
+
+            // tablet
+            @include respond-below(l) {
+                height: 32px;
+                position: relative;
+                width: 32px;
+                min-width: 32px;
+                min-height: 32px;
+                z-index: 2;
+            }
+        }
+
+        &.complete {
+            background: url(../img/icons/timeline-complete.svg) no-repeat center;
+            cursor: pointer;
+            display: block;
+            width: 17px;
+            height: 16px;
+
+            // tablet
+            @include respond-below(l) {
+                position: relative;
+                width: 32px;
+                height: 22px;
+                z-index: 2;
+            }
+        }
+
+        &.loading {
+            background: url(../img/icons/timeline-loading.svg) no-repeat center;
+            cursor: pointer;
+            display: block;
+            width: 17px;
+            height: 16px;
+            animation: lds-dual-ring 1.2s linear infinite;
+
+            @keyframes lds-dual-ring {
+                0% {
+                  transform: rotate(0deg);
+                }
+                100% {
+                  transform: rotate(360deg);
+                }
+            }
+
+            // tablet
+            @include respond-below(l) {
+                position: relative;
+                width: 32px;
+                height: 22px;
+                z-index: 2;
+            }
+        }
+
+        &:nth-last-child(1) {
+            &.active {
+                &::after{
+                    left: -8px !important;
+                }
+                &::before{
+                    left: -3px !important;
+                }
+            }
+        }
+
+        // tablet
+        @include respond-below(l) {
+            position: relative;
+            width: 32px;
+            height: 21px;
+            z-index: 2;
+        }
+    }
+
+    &__mega-menu-timeline-line {
+        width: 100%;
+        height: 1px;
+        background-color: $timeline;
+
+        &.complete {
+            background-color: $purple;
+        }
+
+        // tablet
+        @include respond-below(l) {
+            width: 1px;
+            height: 100%
+        }
+    }
+
+    &__mega-menu-content-item-more {
+        display: block;
+        font-family: $font;
+        font-weight: map-get($font-weights, 'semi');
+        font-size: 16px;
+        line-height: 1.5em;
+        cursor: pointer;
+        color: map-get($greys, 'regular-2');
+        margin: 18.5px 0 0 10px;
+
+        // tablet
+        @include respond-below(l) {
+            display: none;
+        }
+    }
+
+    &__mega-menu-timeline-cta {
+        cursor: pointer;
+        position: absolute;
+        transition: all 0.3s ease;
+        right: 0px;
+        top: 7px;
+        height: 22px;
+        width: 82px;
+        padding: 4px 8px;
+        border: 1px solid rgba(51, 51, 51, 0.2);
+        box-sizing: border-box;
+        border-radius: 4px;
+        background-color: #fff;
+        transition: all 0.3s ease-in-out;
+        z-index: 3;
+
+        @include respond-below(sl) {
+            display: none;
+        }
+
+        &--mobile {
+            display: none !important;
+
+            @media (max-width: 1024px) {
+                display: block !important;
+                background: url(../img/icons/timeline-close.svg) no-repeat center;
+                border: 0;
+                cursor: pointer;
+                position: absolute;
+                right: -28px;
+                top: 3px;
+                height: 29px;
+                width: 29px;
+            }
+        }
+
+        &:hover {
+            border: 1px solid $secondary;
+            &::before {
+                color: $secondary;
+            }
+            @media (max-width: 1024px) {
+                border: 0;
+            }
+        }
+
+        &::before {
+            content: 'See Less -';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 100%;
+            color: map-get($greys, 'regular-3');
+            transition: all 0.3s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            
+            @media (max-width: 1024px) {
+                display: none !important;
+            }
+        }
+
+        &.active {
+            display: block;
+            visibility: visible;
+            transition: all 0.3s ease-in-out;
+            width: 88px;
+            z-index: 3;
+            &:hover {
+                &::before {
+                    color: $secondary;
+                }
+            }
+            &::before {
+                content: 'See More +';
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 100%;
+                color: map-get($greys, 'regular-3');
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 3;
+            }
+            @media (max-width: 1024px) {
+                background: url(../img/icons/timeline-open.svg) no-repeat center;
+                border: 0;
+                width: 29px;
+                &::before {
+                    display: none !important;
+                }
+            }
+        }
+
+        // laptop
+        @include respond-below(xl) {
+            right: 6px;
+        }
+
+        // tablet
+        @include respond-below(l) {
+            //top: -32px;
+            top: 16px;
+            right: 16px;
+
+            &:last-of-type {
+                display: none;
+            }
+        }
+    }
+    &__control-slide {
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1210px; // this is because shadow of play timeline is outside of the container
+        height: 100%;
+        padding-bottom: 18px;
+        // mobile
+        @include respond-below(l) {
+            display: none;
+        }
+    }
+    &__controls {
+        position: absolute;
+        top: -14px;
+        right: 0;
+        width: 90px;
+        height: 22px;
+        background-color: $white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 34px;
+        z-index: 2;
+    }
+    &__prev-btn {
+        width: 22px;
+        height: 22px;
+        border: 1.5px solid $purple;
+        border-radius: 50%;
+        background-color: $white;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease-in-out;
+        z-index: 3;
+        &::after {
+            content: '';
+            width: 7px;
+            height: 7px;
+            margin-left: 2px;
+            border-right: 1px solid $secondary;
+            border-bottom: 1px solid $secondary;
+            transform: rotate(140deg);
+        }
+        &:hover {
+            background-color: $secondary;
+            border: 1.5px solid $secondary;
+            &::after {
+                border-right: 1px solid $white;
+                border-bottom: 1px solid $white;
+            }
+        }
+        &.inactive {
+            opacity: 0.5;
+            cursor: default;
+        }
+    }
+    &__next-btn {
+        width: 22px;
+        height: 22px;
+        border: 1.5px solid $purple;
+        border-radius: 50%;
+        background-color: $white;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease-in-out;
+        z-index: 3;
+        &::after {
+            content: '';
+            width: 7px;
+            height: 7px;
+            margin-right: 2px;
+            border-right: 1px solid $secondary;
+            border-bottom: 1px solid $secondary;
+            transform: rotate(-45deg);
+        }
+        &:hover {
+            background-color: $secondary;
+            border: 1.5px solid $secondary;
+            &::after {
+                border-right: 1px solid $white;
+                border-bottom: 1px solid $white;
+            }
+        }
+        &.inactive {
+            opacity: 0.5;
+            cursor: default;
+        }
+    }
+
+    .hor-scroll-wrap {
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1210px;
+        &::before {
+            content: "";
+            position: absolute;
+            top: -9px;
+            left: -30px;
+            height: 100%;
+            width: 5rem;
+            background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 8%, rgba(255, 255, 255, 0.8) 20%, white 80%);
+            transition: all linear 0.3s;
+            z-index: 3;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: -9px;
+            right: -30px;
+            height: 100%;
+            width: 11rem;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 8%, rgba(255, 255, 255, 0.8) 20%, white 80%);
+            transition: all linear 0.3s;
+            z-index: 2;
+        }
+        &.start {
+            &::before {
+                width: 0;
+            }
+        }
+        &.ended {
+            &::after {
+                width: 0;
+            }
+        }
+    }    
+}

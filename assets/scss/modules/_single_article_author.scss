@@ -1,0 +1,119 @@
+.b-single-author {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid map-get($greys, 'light-4');
+    margin-bottom: 40px;
+    // mobile
+    @include respond-below(sl) {
+        padding: 0 15px 40px;
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+    &__author-profile {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    &__author-image {
+        display: block;
+        height: 77px;
+        width: 77px;
+        margin-right: 10px;
+        // mobile
+        @include respond-below(sl) {
+            height: 55px;
+            width: 55px;
+            margin-right: 8.21px;
+        }
+    }
+    &__author-image img {
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+    &__author-link {
+        text-decoration: none;
+    }
+    &__author-name {
+        font-family: $font;
+        font-weight: map-get($font-weights, 'semi');
+        font-size: 20px;
+        line-height: 1.3em;
+        display: flex;
+        align-items: center;
+        color: map-get($greys, 'dark');
+        margin-bottom: 3px;
+        // mobile
+        @include respond-below(sl) {
+            font-weight: map-get($font-weights, 'regular');;
+            font-size: 18px;
+            line-height: 1.5em;
+        }
+    }
+    &__author-specialty {
+        font-family: $font;
+        font-weight: map-get($font-weights, 'light');
+        font-size: 14px;
+        line-height: 1.5em;
+        display: flex;
+        align-items: center;
+        color: map-get($greys, 'regular-2');
+    }
+    &__author-share {
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        border: 1px solid map-get($greys, 'light-4');
+        box-sizing: border-box;
+        border-radius: 8px;
+        padding: 10px;
+
+        font-family: $font;
+        font-weight: map-get($font-weights, 'medium');
+        font-size: 16px;
+        line-height: 1.5em;
+        color: map-get($greys, 'regular-2');
+        transition: all 0.3s ease;
+        -moz-transition:  all 0.3s ease; /* Firefox 4 */
+        -webkit-transition:  all 0.3s ease; /* Safari and Chrome */
+        -o-transition:  all 0.3s ease; /* Opera */
+        -ms-transition:  all 0.3s ease; /* Explorer 10 */
+        &:hover {
+            color: map-get($greys, 'dark');
+            border: 1px solid map-get($greys, 'dark');
+            .b-single-author__author-share-icon {
+                background-image: url(../img/icons/share-desktop-hover.svg);
+            }
+        }
+        // mobile
+        @include respond-below(sm) {
+            padding: 9px 7px;
+        }
+    }
+    // mobile
+    @include respond-below(sm) {
+        &__author-share span {
+            display: none;
+        }
+    }
+    &__author-share-icon {
+        background-image: url(../img/icons/share-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        display: block;
+        margin-right: 10px;
+        width: 24px;
+        height: 16px;
+        // mobile
+        @include respond-below(sm) {
+            margin-right: 0;
+            width: 18px;
+            height: 14px;
+        }
+    }
+}

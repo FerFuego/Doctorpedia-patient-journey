@@ -1,0 +1,26 @@
+.tab-articles {
+    border-top: 1px solid map-get($greys, 'light-4');
+    display: grid;
+    //grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 41px 20px;
+    padding-top: 41px;
+    padding-bottom: 61px;
+    // laptop
+    @include respond-below(xl) {
+        padding: 32px 15px 0;
+    }
+    // tablet
+    @include respond-below(l) {
+        border-top: none;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 15px;
+    }
+    // mobile
+    @include respond-below(sm) {
+        border-top: none;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0 14px;
+        grid-gap: 24px 20px;
+    }
+}

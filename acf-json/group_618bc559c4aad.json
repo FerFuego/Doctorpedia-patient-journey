@@ -1,0 +1,83 @@
+{
+    "key": "group_618bc559c4aad",
+    "title": "Component: Footer",
+    "fields": [
+        {
+            "key": "field_6099817d3a962",
+            "label": "Footer",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6099818d3a963",
+            "label": "Icon",
+            "name": "footer__icon",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_609981a43a964",
+            "label": "Copy",
+            "name": "footer__copy",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "At Doctorpedia, we believe that every person should have access to leading doctors – anytime, anywhere. Our library of over 2,500 doctor-led websites will provide patients with video and written content, tools, and resources that are credible, engaging, and specific to their needs.\r\n\r\n&nbsp;\r\n\r\n<a class=\"footer-a\" href=\"\/privacy-policy\/\" target=\"_blank\" rel=\"noopener\">Privacy Policy<\/a>    <a class=\"footer-a\" href=\"\/terms-of-use\/\" target=\"_blank\" rel=\"noopener\">Terms of Use<\/a>\r\n\r\n&nbsp;\r\n\r\nDisclaimer: Doctorpedia and affiliated websites are for informational purposes only and do not provide medical advice, opinion or diagnosis.\r\n\r\n&nbsp;",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-footer"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1636550531
+}

@@ -1,0 +1,81 @@
+.b-single-videos {
+    &__container {
+        background-color: $white;
+    }
+
+    &__hero {
+        padding-top: 84px;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        // laptop
+        @include respond-below(xl) {
+            padding: 32px 15px 0;
+        }
+    }
+
+    &__breadcrumb {
+        display: flex;
+        padding-bottom: 18px;
+    }
+
+    &__breadcrumb-father {
+        display: flex;
+        align-items: center;
+        font-family: $font;
+        font-weight: map-get($font-weights, 'regular');
+        font-size: 15px;
+        line-height: 1.2em;
+        color: map-get($greys, 'light-3');
+        text-decoration: none;
+        cursor: pointer;
+        text-transform: capitalize;
+
+        &::after {
+            content: '';
+            background: url(../img/icons/next-arrow-grey.svg) no-repeat center;
+            margin-left: 9px;
+            margin-right: 9px;
+            margin-top: 2px;
+            height: 10.5px;
+            width: 6px;
+        }
+        // mobile
+        &:nth-child(2) {
+            &::after {
+                @include respond-below(sl) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__breadcrumb-current {
+        font-family: $font;
+        font-weight: map-get($font-weights, 'medium');
+        font-size: 15px;
+        line-height: 1.2em;
+        color: map-get($greys, 'regular-2');
+        // mobile
+        @include respond-below(sl) {
+            display: none;
+        }
+    }
+
+    &__title {
+        font-family: $font;
+        font-weight: map-get($font-weights, 'bold');
+        font-size: 32px;
+        line-height: 1.5em;
+        color: map-get($greys, 'dark');
+        display: block;
+        margin-bottom: 25px;
+
+        // mobile
+        @include respond-below(sl) {
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+    }
+}

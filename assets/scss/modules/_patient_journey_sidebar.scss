@@ -1,0 +1,184 @@
+.sidebar-pj {
+    display: block;
+    width: 387px;
+    box-sizing: border-box;
+    position: relative;
+    // mobile
+    @include respond-below(sl) {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    &__content {
+        border: 1px solid map-get($greys, 'light-4');
+        padding-bottom: 20px;
+        // mobile
+        @include respond-below(sl) {
+            border: none;
+            border-top: 1px solid map-get($greys, 'light-4');
+        }
+    }
+    &__group {
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+    &__line {
+        background-color: $primary;
+        height: 2px;
+        display: block;
+        left: 20px;
+        top: 0;
+        position: absolute;
+        width: 123px;
+        // mobile
+        @include respond-below(sl) {
+            display: none;
+        }
+    }
+    &__title {
+        color: map-get($greys, 'bold');
+        display: flex;
+        font-family: $font;
+        font-weight: map-get($font-weights, 'semi');
+        font-size: 22px;
+        line-height: 1.5em;
+        padding: 16px 30px 10px 20px;
+        
+        // mobile
+        @include respond-below(sl) {
+            padding: 24px 15px 8px 15px;
+        }
+    }
+    &__item {
+        display: flex;
+        display: -webkit-flex;
+        align-items: stretch;
+        height: auto;
+        min-height: 115px;
+        padding: 10px 30px 10px 20px;
+        width: 100%;
+        &:hover {
+            background-color: rgba(223, 5, 78, 0.05);
+            cursor: pointer;
+        }
+        &.active {
+            background-color: rgba(223, 5, 78, 0.05);
+        }
+        &.hidden {
+            display: none;
+        }
+        // mobile
+        @include respond-below(sl) {
+            padding: 10px 15px 10px 15px;
+        }
+    }
+    &__item-video {
+        background-color: map-get($greys, 'light-4');
+        width: 143px;
+        min-width: 143px;
+        max-width: 143px;
+        height: 95px;
+        left: 20px;
+        border-radius: 10px;
+        margin-right: 10px;
+        overflow: hidden;
+    }
+    &__item-data {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        position: relative;
+        width: 143px;
+        height: 95px;
+    }
+    &__item-time {
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 3px 5px 2px;
+
+        position: absolute;
+        width: 37px;
+        height: 23px;
+        right: 5px;
+        bottom: 5px;
+        color: $white;
+
+        font-family: $font;
+        font-weight: map-get($font-weights, 'medium');
+        font-size: 12px;
+        line-height: 1.5em;
+    }
+    &__item-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        position: relative;
+    }
+    &__item-title {
+        font-family: $font;
+        font-weight: map-get($font-weights, 'medium');
+        font-size: 15px;
+        line-height: 1.3em;
+        color: map-get($greys, 'dark');
+        cursor: pointer;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        @supports (-webkit-line-clamp: 2) {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: initial;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical !important;
+        }
+    }
+    &__item-author {
+        font-family: $font;
+        font-weight: map-get($font-weights, 'regular');
+        font-size: 14px;
+        line-height: 1.3em;
+        color: map-get($greys, 'regular-2');
+    }
+    &__list-cta {
+        display: none;
+        cursor: pointer;
+        font-family: $font;
+        font-weight: map-get($font-weights, 'medium');
+        font-size: 18px;
+        line-height: 1.22em;
+        color: $primary;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        &::after {
+            content: "";
+            display: none;
+            width: 12px;
+            height: 7px;
+            background: url(../img/icons/down-arrow-pink.svg) no-repeat center center;
+            margin-left: 7.5px;
+            margin-top: 3px;
+            // mobile
+            @include respond-below(sl) {
+                display: block;
+            }
+        }
+        &.active {
+            display: flex;
+            margin-top: 20px;
+        }
+        // mobile
+        @include respond-below(sl) {
+            font-size: 16px;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.error-404 {
+    margin-top: 50px;
+
+    &__header {
+        text-align: center;
+        padding: 20px 0 100px 0;
+    }
+
+    &__title { 
+        font-size: 82px;
+        color: $primary;
+        display: block;
+        line-height: 1.2em;
+        font-family: $font;
+    }
+
+    &__link {
+        font-size: 24px;
+        text-decoration: underline;
+        color: $blue-link;
+    }
+
+    &__copy {
+        text-align: center;
+        padding: 40px 0;
+        font-size: 40px;
+        font-family: $font;
+        font-weight: map-get($font-weights, 'regular');
+        line-height: 1.2em;
+    }
+}

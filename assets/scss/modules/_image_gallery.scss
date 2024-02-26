@@ -1,0 +1,17 @@
+.m-image-gallery {
+
+    &__slider {}
+
+    &__slide{
+        img{
+            max-height: 500px;
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+        }
+
+        .slick-track{
+            max-height: 500px;
+        }
+    }
+}

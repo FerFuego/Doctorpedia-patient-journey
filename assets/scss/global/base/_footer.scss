@@ -1,0 +1,96 @@
+.b-footer{
+	background: $primary-blue;
+	padding: 80px 0;
+	position: relative;
+	//Ipad
+	@media(max-width: map-get($breakpoints, 'l' )) {
+		padding: 35px 20px;
+	}
+	//Mobile
+	@media(max-width: map-get($breakpoints, 'md' )) {
+		padding: 35px 20px;
+	}
+	&__body {
+        max-width: 1140px;
+        padding: 0 15px;
+		margin: 0 auto;
+    }
+	&__logo {
+		margin-bottom: 25px;
+	}
+	&__content {
+		p {
+			font-size: 14px;
+			line-height: 1.5em;
+			color: $white;
+			width: 100%;
+			//Mobile
+			@media(max-width: map-get($breakpoints, 'md' )) {
+				width: 100%;
+			}
+		}
+		a {
+			color: $secondary-teal;
+			text-decoration: none;
+		}
+	}
+	&__container {
+		display: flex;
+		flex-direction: row;
+		border-top: 1px solid $white;
+		margin: 25px auto 0;
+		max-width: 1140px;
+		padding: 30px 15px 0;
+		// Tablet
+		@media(max-width: map-get($breakpoints, 'l' )) {
+			padding-top: 30px !important;
+		}
+		//Mobile
+		@media(max-width: map-get($breakpoints, 'md' )) {
+			flex-direction: column-reverse;
+			border-top: none;
+		}
+	}
+	&__copy {
+		color: $white;
+	}
+	&__email {
+		color: $secondary-teal;
+		padding-left: 10px;
+		text-decoration: none;
+		// Tablet
+		@media(max-width: map-get($breakpoints, 'l' )) {
+			padding-left: 10px;
+		}
+		//Mobile
+		@media(max-width: map-get($breakpoints, 'md' )) {
+			padding: 10px 0;
+		}
+	}
+	&__social {
+		margin-left: auto;
+		margin-top: -5px;
+		//Mobile
+		@media(max-width: map-get($breakpoints, 'md' )) {
+			margin: 25px 0;
+			text-align: center;
+		}
+	}
+	&__social-item {
+		display: inline-block;
+		//Mobile
+		@media(max-width: map-get($breakpoints, 'md' )) {
+			margin: 0 5px;
+		}
+	}
+	&__social-link {
+		padding-left: 10px;
+	}
+	&__social-icon {
+		//Mobile
+		@media(max-width: map-get($breakpoints, 'md' )) {
+			width: 42px !important;
+			height: 42px !important;
+		}
+	}
+}

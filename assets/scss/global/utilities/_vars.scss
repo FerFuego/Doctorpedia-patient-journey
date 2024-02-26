@@ -1,0 +1,57 @@
+/*--------------------------------------------------------------
+# Basic Colors
+--------------------------------------------------------------*/
+$white: #FFFFFF;
+$black: #000000;
+
+/*--------------------------------------------------------------
+# Design principal colors
+--------------------------------------------------------------*/
+$primary: #DF054E;
+$primary-hover: #c90043;
+$primary-blue: #303248;
+$secondary: #5846BC;
+$secondary-hover: #F3F3FF;
+$secondary-teal: #21d1e3;
+$purple: #A5A6F6;
+$purple-match: #B4B4FF;
+$blue-link: #007bff;
+$turquoise: #1CA4B2;
+$timeline: #D7D7FF;
+$greys: ('light': #f9f9f9,
+	'light-1': #fafafa,
+	'light-2': #E5E5E5,
+	'light-3': #9F9F9F,
+	'light-4': #EDEDED,
+	'light-5': #CBCBCB,
+	'regular': #808080,
+	'regular-2': #696969,
+	'regular-3': #7B7B7B,
+	'dark-medium': #303248,
+	'dark': #333333);
+$grays: $greys;
+
+/*--------------------------------------------------------------
+# Fonts
+--------------------------------------------------------------*/
+
+$font: "NeufileGrotesk";
+$font-italic: "NeufileGrotesk-Italic";
+$font-secondary: "Roboto";
+
+$font-weights: ('light': 300,
+	'regular': 400,
+	'medium': 500,
+	'semi': 600,
+	'bold': 700
+);
+
+
+/*--------------------------------------------------------------
+# Padding options for flexible pages
+--------------------------------------------------------------*/
+$padding-options: ('none': 0,
+	'small': 25px,
+	'default': 50px,
+	'large': 100px,
+);

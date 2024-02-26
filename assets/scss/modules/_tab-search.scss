@@ -1,0 +1,94 @@
+
+.tab-search {
+    border-top: 1px solid map-get($greys, 'light-4');
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    // laptop
+    @include respond-below(l) {
+        border: none;
+    }
+    &__articles {
+        width: 100%;
+        .tab-search__header {
+            margin-top: 20px;
+        }
+        .tab-search__body{
+            padding-bottom: 100px;
+        }
+        // laptop
+        @include respond-below(l) {
+            margin-top: 0px;
+            padding-left: 15px;
+            padding-right: 15px;
+            .tab-search__header {
+                margin-top: 20px;
+            }
+        }
+    }
+    &__videos {
+        width: 100%;
+        // laptop
+        @include respond-below(l) {
+            padding: 0 15px;
+        }
+    }
+    &__header {
+        font-family: $font;
+        font-weight: map-get($font-weights, 'bold');
+        font-size: 24px;
+        line-height: 1.5em;
+        color: map-get($greys, 'dark');
+        display: flex;
+        margin-top: 40px;
+        // laptop
+        @include respond-below(l) {
+            margin-top: 0px;
+        }
+    }
+    &__header-span {
+        font-family: $font;
+        font-weight: map-get($font-weights, 'semi');
+        font-size: 22px;
+        line-height: 1.5em;
+        color: map-get($greys, 'regular-2');
+        margin-left: 8px;
+    }
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 40px 20px;
+        padding-top: 40px;
+        padding-bottom: 60px;
+        margin-top: -26px;
+
+        // tablet
+        @include respond-below(l) {
+            border-top: none;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        // mobile
+        @include respond-below(sm) {
+            border-top: none;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 24px 20px;
+        }
+    }
+    &__message {
+        font-family: $font;
+        font-weight: map-get($font-weights, 'regular');
+        font-size: 24px;
+        line-height: 1.5em;
+        color: $primary;
+        margin: 37px 0 187px;
+        // laptop
+        @include respond-below(l) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+    &__message strong {
+        font-weight: map-get($font-weights, 'medium');
+    }
+}

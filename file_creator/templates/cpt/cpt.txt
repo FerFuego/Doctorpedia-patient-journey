@@ -1,0 +1,15 @@
+        //CPT-NAME
+        register_post_type( 'CPT-TAG',
+            array(
+                'labels' => array(
+                    'name' => __( 'CPT-NAME' ),
+                    'singular_name' => __( 'CPT-SINGULARNAME' ),
+                ),
+            'has_archive' => CPT-ARCHIVE,
+            'public' => CPT-PUBLIC,
+            'supports' => array( 'thumbnail', 'title', 'editor'),
+            'menu_icon' => 'CPT-ICON',
+            'publicly_queryable'  => CPT-PUBLICITY //Disable cpt single permalink and redirect to home
+            )
+        );
+        

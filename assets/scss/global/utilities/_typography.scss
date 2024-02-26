@@ -1,0 +1,16 @@
+
+body{
+	color: $black;
+	font-family: $font;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: $font;
+}
+
+.title{
+	color: $black;
+	font-family: $font;
+	font-weight: map-get( $font-weights, 'regular' );
+	text-align: center;
+}

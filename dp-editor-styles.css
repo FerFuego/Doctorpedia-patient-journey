@@ -1,0 +1,171 @@
+@font-face {
+    font-family: 'NeufileGrotesk';
+    src: url(assets/fonts/neufile/neufile-grotesk-light.otf);
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NeufileGrotesk';
+    src: url(assets/fonts/neufile/neufile-grotesk-regular.otf);
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NeufileGrotesk';
+    src: url(assets/fonts/neufile/neufile-grotesk-medium.otf);
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NeufileGrotesk';
+    src: url(assets/fonts/neufile/neufile-grotesk-semibold.otf);
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NeufileGrotesk';
+    src: url(assets/fonts/neufile/Neufile-Grotesk-Bold.otf);
+    font-weight: 900;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NeufileGrotesk-Italic';
+    src: url(assets/fonts/neufile/Neufile-Grotesk-Light-Italic.otf);
+    font-weight: 300;
+    font-display: swap;
+}
+
+
+:root {
+    --main-primary-color: #DF054E;
+    --main-secondary-color: #333333;
+    --font: 'NeufileGrotesk';
+    --font-secondary: 'NeufileGrotesk-Italic';
+}
+.mce-content-body h1 {
+    font-size: 42px;
+}
+.mce-content-body h2 {
+    font-size: 34px;
+}
+.mce-content-body h3 {
+    font-size: 28px;
+}
+.mce-content-body h4 {
+    font-size: 24px;
+}
+.mce-content-body h5 {
+    font-size: 22px;
+}
+.mce-content-body h6 {
+    font-size: 18px;
+}
+.mce-content-body h1, h2, h3 {
+    font-family: var(--font);
+    font-weight: 600;
+    line-height: 1.5em;
+    color: var(--main-secondary-color);
+    margin-bottom: 24px;
+}
+.mce-content-body  h4, h5, h6 {
+    font-family: var(--font);
+    font-weight: 500;
+    line-height: 1.5em;
+    color: var(--main-secondary-color);
+    margin-bottom: 14px;
+}
+.mce-content-body {
+    font-family: var(--font);
+    font-weight: 400;
+    line-height: 1.5em;
+    color: var(--main-secondary-color);
+}
+.mce-content-body p {
+    font-family: var(--font);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5em;
+    color: var(--main-secondary-color);
+}
+.mce-content-body blockquote {
+    font-family: var(--font-secondary);
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 1.5em;
+    color: var(--main-primary-color);
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin: 0;
+}
+.mce-content-body blockquote p {
+    font-family: var(--font-secondary);
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 1.5em;
+    color: var(--main-primary-color);
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.mce-content-body blockquote::before {
+    content: "";
+    display: block;
+    width: 73px;
+    height: 1px;
+    background: var(--main-primary-color);
+    margin-bottom: 40px;
+}
+.mce-content-body blockquote::after {
+    content: "";
+    display: block;
+    width: 73px;
+    height: 1px;
+    background: var(--main-primary-color);
+    margin-top: 40px;
+}
+.mce-content-body ul {
+    font-family: var(--font);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5em;
+    color: var(--main-secondary-color);
+    list-style-type: disc;
+    padding-left: 30px;
+}
+.mce-content-body ol {
+    font-family: var(--font);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5em;
+    color: var(--main-secondary-color);
+    list-style-type: lower-alpha;
+    padding-left: 30px;
+}
+.mce-content-body a {
+    font-family: var(--font);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5em;
+    color: var(--main-primary-color);
+    text-decoration: none;
+}
+.mce-content-body b,
+.mce-content-body strong {
+    font-family: var(--font);
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.5em;
+    color: var(--main-secondary-color);
+}
+.mce-content-body i,
+.mce-content-body em {
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5em;
+    color: var(--main-secondary-color);
+}

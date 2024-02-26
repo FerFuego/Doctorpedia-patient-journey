@@ -1,0 +1,28 @@
+$grid-gutter-width: 20px !default;
+$mobile-outside-gutter-width: 30px !default;
+
+.container{
+    max-width: map-get($breakpoints, 'xl' );
+    margin: 0 auto;
+	padding: 0 41px;
+	
+    @media (max-width: map-get($breakpoints, 'l' )) {
+		max-width: map-get($breakpoints, 'sl' );
+		padding: 0 30px;
+    }
+
+    @media (max-width: map-get($breakpoints, 'sl' )) {
+        max-width: initial;
+    }
+
+    @media (max-width: 320px) {
+        max-width: 100%;
+    }
+}
+
+// mobile devices
+@media (max-width: 320px) {
+	body {
+		max-width: 100%;
+	}
+}

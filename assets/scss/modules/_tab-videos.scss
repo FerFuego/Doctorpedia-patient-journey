@@ -1,0 +1,32 @@
+.js-videos-content{
+    .paginator{
+        padding-top: initial;
+    }
+}
+
+.tab-videos {
+    border-top: 1px solid map-get($greys, 'light-4');
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 40px 20px;
+    padding-top: 41px;
+    padding-bottom: 61px;
+
+    // laptop
+    @include respond-below(xl) {
+        padding: 0 15px 32.5px;
+    }
+
+    // tablet
+    @include respond-below(l) {
+        border-top: none;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    // mobile
+    @include respond-below(sm) {
+        border-top: none;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 24px 20px;
+    }
+}

@@ -1,0 +1,190 @@
+.card-video {
+    border-radius: 10px;
+    text-align: center;
+    padding: 16px 16px 26px;
+    overflow: hidden;
+    background-color: $white;
+    align-self: flex-start;
+
+    // mobile
+    @include respond-below(md) {
+        background-color: $white;
+        border: 1px solid map-get($greys, 'light-4');
+        box-sizing: border-box;
+        border-radius: 16px;
+    }
+
+    &__header {
+        border-radius: 10px;
+        overflow: hidden;
+        width: 100%;
+        height: 154px;
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 0;
+        left: 0;
+        text-decoration: none;
+
+        @include respond-below(md) {
+            margin-bottom: 16px;
+        }
+
+        &-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        &-time {
+            padding: 3px 5px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            font-family: $font;
+            font-weight: map-get($font-weights, 'semi');
+            font-size: 12px;
+            line-height: calc(18em / 12);
+            color: $white;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        svg {
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            max-width: 43px;
+            height: fit-content;
+        }
+    }
+
+    &__author {
+        display: grid;
+        grid-template-columns: 45px calc(100% - 45px);
+        gap: 8px;
+        margin-bottom: 11px;
+    }
+
+    &__author-image {
+        display: block;
+        width: 45px;
+        height: 45px;
+        margin-right: 10px;
+    }
+
+    &__author-image img {
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__author-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    &__author-link {
+        text-decoration: none;
+    }
+
+    &__author-name {
+        font-family: $font;
+        font-weight: map-get($font-weights, 'regular');
+        font-size: 16px;
+        line-height: calc(24em / 16);
+        color: map-get($greys, 'dark');
+        text-transform: capitalize;
+    }
+
+    &__author-specialty {
+        font-family: $font;
+        font-weight: map-get($font-weights, 'medium');
+        font-size: 12px;
+        line-height: calc(18em / 12);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 5px 14px;
+        border: 1px solid map-get($greys, 'light-4');
+        border-radius: 5px;
+        color: map-get($greys, 'light-3');
+        margin-bottom: 8px;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    &__title {
+        font-family: $font;
+        font-weight: map-get($font-weights, 'semi');
+        font-size: 20px;
+        line-height: 1.3em;
+        color: map-get($greys, 'dark');
+        text-align: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        /* autoprefixer: ignore next */
+        -webkit-box-orient: vertical;
+
+    }
+
+    &__link-title {
+        text-decoration: none;
+        text-align: left;
+
+        // mobile
+        @include respond-below(sm) {
+            display: none;
+        }
+    }
+
+    &__link-mobile {
+        display: none;
+        text-decoration: none;
+        text-align: left;
+        margin-bottom: 16px;
+
+        // mobile
+        @include respond-below(sm) {
+            display: block;
+        }
+    }
+
+    &__cta {
+        font-family: $font;
+        font-weight: map-get($font-weights, 'medium');
+        font-size: 16px;
+        line-height: 1.2em;
+        color: $primary;
+        text-align: left;
+        text-decoration: none;
+
+        // mobile
+        @include respond-below(sm) {
+            border: 1px solid rgba(223, 5, 78, 0.25);
+            box-sizing: border-box;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: map-get($font-weights, 'regular');
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+        }
+    }
+}
